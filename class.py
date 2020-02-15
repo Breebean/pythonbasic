@@ -23,10 +23,29 @@ class FourCal:
     def div(self):
         result = self.first / self.second
         return result
-a = FourCal()
-a.setdata(4, 2)
 
-print(a.add())
-print(a.mul())
-print(a.sub())
+
+class MoreFourCal(FourCal):
+
+    def pow(self):
+        result = self.first ** self.second
+        return result
+
+
+class SafeFourCal(FourCal):
+    def div(self):
+        if self.second == 0:
+            return 0
+        else:
+            return self.first / self.second
+
+
+a = SafeFourCal(4, 0)
 print(a.div())
+
+class Family:
+    lastname = "김"
+
+Family.lastname = "박"
+
+print(Family.lastname)
